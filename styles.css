@@ -491,6 +491,8 @@ h3 { font-size: 19px; letter-spacing: -0.01em; font-weight: 650; }
 .aside p strong { color: var(--text); }
 .win-download p { color: var(--muted); margin-top: 16px; }
 #panel-windows .ticks { margin: 0; align-self: center; }
+.steps p strong { color: var(--text); }
+#panel-mac .ticks { margin: 0; color: var(--muted); font-size: 15.5px; }
 
 /* FAQ */
 .faq h2 { margin-bottom: 24px; }
@@ -604,6 +606,11 @@ h3 { font-size: 19px; letter-spacing: -0.01em; font-weight: 650; }
   .lb-prev, .lb-next { position: absolute; bottom: 24px; }
   .lb-prev { left: calc(50% - 56px); } .lb-next { right: calc(50% - 56px); }
   .code pre { padding-right: 20px; padding-top: 54px; }
+  .segmented-wide button { height: 42px; padding: 0 10px; gap: 6px; font-size: 14px; }
+  .segmented-wide .ic { width: 18px; height: 18px; }
+}
+@media (max-width: 400px) {
+  .segmented-wide .ic { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

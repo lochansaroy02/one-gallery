@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>One Gallery: your phone's gallery, on your desktop</title>
   <meta name="description"
-    content="A free, open-source photo and video gallery for Linux and Windows. The folders you choose, newest first and grouped by day, styled after Samsung One UI.">
+    content="A free, open-source photo and video gallery for Linux, Windows and macOS. The folders you choose, newest first and grouped by day, styled after Samsung One UI.">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#F6F6F6" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
@@ -17,7 +17,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="One Gallery: your phone's gallery, on your desktop">
   <meta property="og:description"
-    content="A free, open-source photo and video gallery for Linux and Windows, styled after Samsung One UI.">
+    content="A free, open-source photo and video gallery for Linux, Windows and macOS, styled after Samsung One UI.">
   <meta property="og:image" content="assets/social.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -32,7 +32,7 @@
     "@type": "SoftwareApplication",
     "name": "One Gallery",
     "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Linux, Windows 10, Windows 11",
+    "operatingSystem": "Linux, Windows 10, Windows 11, macOS 13 or newer",
     "softwareVersion": "0.3.0",
     "license": "https://opensource.org/licenses/MIT",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -158,6 +158,10 @@
       <symbol id="i-windows" viewBox="0 0 24 24">
         <path d="M3 5.5 10.5 4.5v7H3zM12.5 4.2 21 3v8.5h-8.5zM3 12.5h7.5v7L3 18.5zM12.5 12.5H21V21l-8.5-1.2z" />
       </symbol>
+      <symbol id="i-mac" viewBox="0 0 24 24">
+        <rect x="4" y="5" width="16" height="11" rx="2" />
+        <path d="M2 19h20" />
+      </symbol>
     </defs>
   </svg>
 
@@ -193,7 +197,7 @@
         <p class="hero-count">Your phone's gallery, on your desktop.</p>
       </div>
       <p class="hero-lede">The folders you choose, newest first and grouped by day. Made for Linux, and it runs on
-        Windows too.</p>
+        Windows and macOS too.</p>
       <div class="hero-ctas">
         <a class="btn" href="#install" data-install-tab="linux">
           <svg class="ic">
@@ -204,6 +208,11 @@
           <svg class="ic">
             <use href="#i-windows" />
           </svg>Download for Windows
+        </a>
+        <a class="btn btn-quiet" href="#install" data-install-tab="mac">
+          <svg class="ic">
+            <use href="#i-mac" />
+          </svg>Download for Mac
         </a>
       </div>
       <p class="hero-meta">Free and open source under the MIT licence. Version 0.3.0.</p>
@@ -470,7 +479,7 @@
           </svg>
           <div>
             <h3>Your image viewer</h3>
-            <p>Open pictures from Dolphin or Explorer. Their folders aren't added to your library.</p>
+            <p>Open pictures from Dolphin, Explorer or Finder. Their folders aren't added to your library.</p>
           </div>
         </li>
         <li><svg class="ic">
@@ -562,6 +571,11 @@
             <use href="#i-windows" />
           </svg>Windows
         </button>
+        <button role="tab" id="tab-mac" aria-controls="panel-mac" aria-selected="false" tabindex="-1">
+          <svg class="ic">
+            <use href="#i-mac" />
+          </svg>macOS
+        </button>
       </div>
 
       <div class="panel" role="tabpanel" id="panel-linux" aria-labelledby="tab-linux">
@@ -622,6 +636,68 @@ cd onegallery</code></pre><button class="copy" type="button" aria-label="Copy co
           <li>Uninstall from Settings › Apps.</li>
         </ul>
       </div>
+
+      <div class="panel" role="tabpanel" id="panel-mac" aria-labelledby="tab-mac" hidden>
+        <ol class="steps">
+          <li>
+            <h3>Download the disk image</h3>
+            <a class="btn"
+              href="https://github.com/lochansaroy02/onegallery/releases/download/v0.3.0/OneGallery-0.3.0-macos-arm64.dmg">
+              <svg class="ic">
+                <use href="#i-download" />
+              </svg>Download for Mac
+            </a>
+            <p class="hint">OneGallery-0.3.0-macos-arm64.dmg, 213 MB. For Apple Silicon Macs (M1 and later) on
+              macOS 13 Ventura or newer. All files are on the <a
+                href="https://github.com/lochansaroy02/onegallery/releases">Releases page</a>.</p>
+            <p class="hint">On an Intel Mac? <a
+                href="https://github.com/lochansaroy02/onegallery#building-the-mac-app">Build it from source</a>.</p>
+          </li>
+          <li>
+            <h3>Drag it to Applications</h3>
+            <p>Open the .dmg and drag One Gallery onto the Applications folder.</p>
+          </li>
+          <li>
+            <h3>Open it</h3>
+            <p>Eject the disk image, then open One Gallery from Applications or Launchpad.</p>
+          </li>
+          <li>
+            <h3>Allow it the first time</h3>
+            <p>The app isn't signed with an Apple Developer ID yet, so macOS says it can't check it for malware. Click
+              Done (not Move to Trash), then:</p>
+            <p><strong>macOS 15 Sequoia and newer:</strong> System Settings › Privacy &amp; Security, scroll to
+              "One Gallery" was blocked, click Open Anyway and confirm with your password.</p>
+            <p><strong>macOS 13 and 14:</strong> in Finder, right-click (Control-click) One Gallery in Applications,
+              choose Open, then Open.</p>
+            <p><strong>Or in Terminal:</strong></p>
+            <div class="code">
+              <pre><code>xattr -dr com.apple.quarantine "/Applications/One Gallery.app"</code></pre><button class="copy"
+                type="button" aria-label="Copy command"><svg class="ic">
+                  <use href="#i-copy" />
+                </svg><span>Copy</span></button>
+            </div>
+          </li>
+          <li>
+            <h3>Optional: video thumbnails</h3>
+            <p>Install ffmpeg with Homebrew and One Gallery finds it by itself. Videos play without it.</p>
+            <div class="code">
+              <pre><code>brew install ffmpeg</code></pre><button class="copy" type="button"
+                aria-label="Copy command"><svg class="ic">
+                  <use href="#i-copy" />
+                </svg><span>Copy</span></button>
+            </div>
+          </li>
+        </ol>
+        <div class="aside">
+          <p><strong>Good to know</strong></p>
+          <ul class="ticks">
+            <li>To open pictures from Finder in One Gallery: Settings › Default image viewer › Set as default.</li>
+            <li>Uninstall by dragging the app to the Trash. Settings and the index stay in
+              <code>~/Library/Application Support/One Gallery</code> and <code>~/Library/Caches/One Gallery</code>;
+              delete those folders to remove everything.</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- ===== FAQ ===== -->
@@ -637,7 +713,8 @@ cd onegallery</code></pre><button class="copy" type="button" aria-label="Copy co
         <summary>Where does it keep its data?</summary>
         <p>On Linux: settings in <code>~/.config/onegallery</code>, the index, favorites and private album in
           <code>~/.local/share/onegallery</code>, and thumbnails in <code>~/.cache/onegallery</code>. On Windows:
-          <code>%APPDATA%\OneGallery</code> and <code>%LOCALAPPDATA%\OneGallery</code>.</p>
+          <code>%APPDATA%\OneGallery</code> and <code>%LOCALAPPDATA%\OneGallery</code>. On macOS:
+          <code>~/Library/Application Support/One Gallery</code> and <code>~/Library/Caches/One Gallery</code>.</p>
       </details>
       <details>
         <summary>Is anything uploaded?</summary>

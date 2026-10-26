@@ -1,0 +1,290 @@
+- generic [ref=f1e1]:
+  - link "Skip to content" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f1e3]:
+    - link "One Gallery, back to top" [ref=f1e339] [cursor=pointer]:
+      - /url: "#top"
+      - generic [ref=f1e340]: One Gallery
+    - generic [ref=f1e4]:
+      - button "Switch to dark theme" [ref=f1e5] [cursor=pointer]
+      - link "Source code on GitHub" [ref=f1e8] [cursor=pointer]:
+        - /url: https://github.com/lochansaroy02/onegallery
+  - main [ref=f1e11]:
+    - generic [ref=f1e12]:
+      - generic [ref=f1e13]:
+        - heading "One Gallery" [level=1] [ref=f1e14]
+        - paragraph [ref=f1e15]: Your phone's gallery, on your desktop.
+      - paragraph [ref=f1e16]: The folders you choose, newest first and grouped by day. Made for Linux, and it runs on Windows and macOS too.
+      - generic [ref=f1e17]:
+        - link "Install on Linux" [ref=f1e18] [cursor=pointer]:
+          - /url: "#install"
+        - link "Download for Windows" [ref=f1e21] [cursor=pointer]:
+          - /url: https://github.com/lochansaroy02/onegallery/releases/latest
+        - link "Download for Mac" [ref=f1e24] [cursor=pointer]:
+          - /url: "#install"
+      - paragraph [ref=f1e27]: Free and open source under the MIT licence. Version 0.3.0.
+      - figure [ref=f1e28]:
+        - generic [ref=f1e30]: One Gallery
+        - 'img "The Pictures tab: photos grouped under Today, Yesterday and Fri, Oct 23, with the floating navigation bar at the bottom." [ref=f1e35]'
+    - generic [ref=f1e36]:
+      - generic [ref=f1e37]:
+        - heading "Every picture, in the order you took it." [level=2] [ref=f1e38]
+        - paragraph [ref=f1e39]: "One Gallery reads the folders you pick, including ones on other drives, and lays them out like the gallery on your phone: newest first, under day headers that stay in view as you scroll."
+        - list [ref=f1e40]:
+          - listitem [ref=f1e41]: Today, Yesterday, then dates like “Fri, Oct 23”
+          - listitem [ref=f1e42]: A fast-scroll handle that shows the month as you drag
+          - listitem [ref=f1e43]: Videos sit among your pictures, with their length on the tile
+          - listitem [ref=f1e44]: Thumbnails load in the background, so scrolling stays smooth
+        - tablist "Number of columns" [ref=f1e45]:
+          - tab "6 columns" [selected] [ref=f1e47] [cursor=pointer]
+          - tab "9 columns" [ref=f1e48] [cursor=pointer]
+        - paragraph [ref=f1e49]: Ctrl + mouse wheel changes the column count, like pinching on your phone.
+      - figure [ref=f1e50]:
+        - generic [ref=f1e52]: One Gallery
+        - generic [ref=f1e56]:
+          - 'img "The Pictures tab in six columns: a large Pictures title with the number of pictures and videos, then the photos taken Today." [ref=f1e57]'
+          - img "The same timeline in nine columns, showing a whole month of pictures at once." [ref=f1e58]
+    - generic [ref=f1e59]:
+      - generic [ref=f1e60]:
+        - heading "Black and white, or Material You." [level=2] [ref=f1e61]
+        - paragraph [ref=f1e62]: Keep One UI's pure white and pure black, or let one colour tint the whole app the way Android 12 does. The navigation bar can be solid, or Liquid Glass that bends the photos behind it.
+        - radiogroup "Try a look" [ref=f1e63]:
+          - radio "One UI Black and white, solid bar" [checked] [ref=f1e64] [cursor=pointer]:
+            - generic [ref=f1e66]:
+              - text: One UI
+              - generic [ref=f1e67]: Black and white, solid bar
+          - radio "Green Material You, frosted glass" [ref=f1e68] [cursor=pointer]:
+            - generic [ref=f1e70]:
+              - text: Green
+              - generic [ref=f1e71]: Material You, frosted glass
+          - radio "Pink Material You, clear glass" [ref=f1e72] [cursor=pointer]:
+            - generic [ref=f1e74]:
+              - text: Pink
+              - generic [ref=f1e75]: Material You, clear glass
+          - radio "Amber Material You, dark" [ref=f1e76] [cursor=pointer]:
+            - generic [ref=f1e78]:
+              - text: Amber
+              - generic [ref=f1e79]: Material You, dark
+          - radio "Midnight Pure black, clear glass" [ref=f1e80] [cursor=pointer]:
+            - generic [ref=f1e82]:
+              - text: Midnight
+              - generic [ref=f1e83]: Pure black, clear glass
+        - paragraph [ref=f1e84]: By default the accent follows your accent colour, and changes when you change it.
+      - figure [ref=f1e85]:
+        - generic [ref=f1e87]: One Gallery
+        - generic [ref=f1e91]:
+          - 'img "One UI look: white background, blue highlight on the solid navigation bar." [ref=f1e92]'
+          - 'img "Material You in green: soft green background, and a frosted glass navigation bar blurring the photos behind it." [ref=f1e93]'
+          - img "Material You in pink, with a clear glass navigation bar the photos show through." [ref=f1e94]
+          - 'img "Material You in amber, dark mode: warm dark background and an amber highlight on a frosted glass bar." [ref=f1e95]'
+          - img "Pure black dark mode with a clear glass navigation bar." [ref=f1e96]
+    - generic [ref=f1e97]:
+      - generic [ref=f1e98]:
+        - heading "Look closer, then make it better." [level=2] [ref=f1e99]
+        - paragraph [ref=f1e100]: Pictures open full screen on black. Swipe or use the arrow keys, pinch or scroll to zoom, and open Details for the date, size and path.
+        - paragraph [ref=f1e101]: The editor crops, rotates and straightens, has 9 filters and 10 adjustments, and lets you hold to compare with the original. Save over the picture or as a copy, and revert to the original later.
+        - tablist "Viewer screens" [ref=f1e102]:
+          - tab "Viewer" [selected] [ref=f1e104] [cursor=pointer]
+          - tab "Details" [ref=f1e105] [cursor=pointer]
+          - tab "Filters" [ref=f1e106] [cursor=pointer]
+          - tab "Adjust" [ref=f1e107] [cursor=pointer]
+      - figure [ref=f1e108]:
+        - generic [ref=f1e110]: One Gallery
+        - generic [ref=f1e114]:
+          - img "A mountain photo open full screen on black, with the date at the top and Favorite, Edit, Share, Delete and Details buttons below." [ref=f1e115]
+          - 'img "The Details panel over the photo: date taken, file name, resolution, size and path, with Show in folder and Copy path buttons." [ref=f1e116]'
+          - 'img "The editor''s Filters tab: a strip of filter previews with Vintage selected and a strength slider." [ref=f1e117]'
+          - img "The editor's Adjust tab with Warmth set to +35, and Brightness, Exposure, Contrast, Highlights, Shadows, Saturation, Tint and Sharpness alongside." [ref=f1e118]
+    - generic [ref=f1e120]:
+      - generic [ref=f1e121]:
+        - heading "A private album that only opens with your password." [level=2] [ref=f1e124]
+        - paragraph [ref=f1e125]: Pictures and videos you move in are encrypted and disappear from their folders and from the rest of One Gallery. Lock it again, and nothing private is left on screen.
+      - generic [ref=f1e126]:
+        - figure [ref=f1e127]:
+          - generic [ref=f1e129]: One Gallery
+          - img "The Private album dialog asking for the password, over the dimmed Albums tab." [ref=f1e133]
+        - figure [ref=f1e134]:
+          - generic [ref=f1e136]: One Gallery
+          - img "The unlocked Private album showing its 8 pictures." [ref=f1e140]
+    - generic [ref=f1e141]:
+      - generic [ref=f1e142]:
+        - heading "Stories, places and people." [level=2] [ref=f1e143]
+        - paragraph [ref=f1e144]:
+          - strong [ref=f1e145]: Stories
+          - text: are slideshows of the pictures you took around today's date, one, two or more years ago.
+          - strong [ref=f1e146]: Places
+          - text: groups pictures by town and country from their GPS.
+          - strong [ref=f1e147]: People
+          - text: groups faces.
+        - paragraph [ref=f1e148]: All of it runs on your computer. Nothing is uploaded.
+        - tablist "Collections screens" [ref=f1e149]:
+          - tab "Collections" [selected] [ref=f1e151] [cursor=pointer]
+          - tab "Story" [ref=f1e152] [cursor=pointer]
+          - tab "Places" [ref=f1e153] [cursor=pointer]
+      - figure [ref=f1e154]:
+        - generic [ref=f1e156]: One Gallery
+        - generic [ref=f1e160]:
+          - img "The Collections tab with two stories, 1 year ago and 3 years ago, and a People section below." [ref=f1e161]
+          - img "A story playing full screen, titled 1 year ago, with progress bars at the top." [ref=f1e162]
+          - 'img "The Places page listing towns grouped by country: Innsbruck in Austria, Reykjavik in Iceland, Kyoto in Japan, and more." [ref=f1e163]'
+    - generic [ref=f1e164]:
+      - heading "And the rest of what a gallery should do." [level=2] [ref=f1e165]
+      - list [ref=f1e166]:
+        - listitem [ref=f1e167]:
+          - generic [ref=f1e170]:
+            - heading "Videos" [level=3] [ref=f1e171]
+            - paragraph [ref=f1e172]: Play straight away, muted, in the viewer. Play video opens the built-in player with sound.
+        - listitem [ref=f1e173]:
+          - generic [ref=f1e176]:
+            - heading "Albums" [level=3] [ref=f1e177]
+            - paragraph [ref=f1e178]: One album per folder or sub-folder, plus Favorites and Videos.
+        - listitem [ref=f1e179]:
+          - generic [ref=f1e182]:
+            - heading "Selection" [level=3] [ref=f1e183]
+            - paragraph [ref=f1e184]: Right-click or long-press to select, or tick a day header to select the whole day.
+        - listitem [ref=f1e185]:
+          - generic [ref=f1e188]:
+            - heading "Share like Dolphin" [level=3] [ref=f1e189]
+            - paragraph [ref=f1e190]: KDE Connect, Bluetooth, e-mail, Telegram, Nextcloud and the rest of KDE's Share menu.
+        - listitem [ref=f1e191]:
+          - generic [ref=f1e194]:
+            - heading "Search" [level=3] [ref=f1e195]
+            - paragraph [ref=f1e196]: "By file name, folder or date: “2025”, “October”, “oct 2024”."
+        - listitem [ref=f1e197]:
+          - generic [ref=f1e200]:
+            - heading "Your image viewer" [level=3] [ref=f1e201]
+            - paragraph [ref=f1e202]: Open pictures from Dolphin, Explorer or Finder. Their folders aren't added to your library.
+        - listitem [ref=f1e203]:
+          - generic [ref=f1e206]:
+            - heading "Set as wallpaper" [level=3] [ref=f1e207]
+            - paragraph [ref=f1e208]: Wallpaper, lock screen or both, and print or save as PDF with a live preview.
+        - listitem [ref=f1e209]:
+          - generic [ref=f1e212]:
+            - heading "Other drives" [level=3] [ref=f1e213]
+            - paragraph [ref=f1e214]: Folders on unplugged drives are kept and marked unavailable, not removed.
+        - listitem [ref=f1e215]:
+          - generic [ref=f1e218]:
+            - heading "KDE global menu" [level=3] [ref=f1e219]
+            - paragraph [ref=f1e220]: A full File, Edit, View, Go menu in Plasma's global menu, and native file dialogs.
+        - listitem [ref=f1e221]:
+          - generic [ref=f1e224]:
+            - heading "Safe with your files" [level=3] [ref=f1e225]
+            - paragraph [ref=f1e226]: Removing a folder never deletes files. Delete moves pictures to the trash.
+    - region [ref=f1e227]:
+      - heading "More screens" [level=2] [ref=f1e228]
+      - generic [ref=f1e229]:
+        - 'button "Open screenshot: Albums, one per folder." [ref=f1e230]':
+          - 'img "The Albums tab: cover cards for Videos, Private album, Camera, Lisbon, Alps and more." [ref=f1e231]'
+        - 'button "Open screenshot: The Videos tab lists only videos." [ref=f1e232]':
+          - img "The Videos tab with video tiles showing their length." [ref=f1e233]
+        - 'button "Open screenshot: Select pictures, then share, favourite, move to the private album or delete." [ref=f1e234]':
+          - 'img "Selection mode with 3 selected and an action bar: Share, Favorite, Private, Open with, Copy path, Show, Delete." [ref=f1e235]'
+        - 'button "Open screenshot: Search for Lisbon finds the trip folder." [ref=f1e236]':
+          - img "Search results for Lisbon, grouped by day." [ref=f1e237]
+        - 'button "Open screenshot: Albums in dark mode." [ref=f1e238]':
+          - img "The Albums tab in dark mode." [ref=f1e239]
+        - 'button "Open screenshot: The viewer, on black." [ref=f1e240]':
+          - img "A photo open in the viewer." [ref=f1e241]
+        - 'button "Open screenshot: Settings, one tap away in the navigation bar." [ref=f1e242]':
+          - 'img "The Settings tab: theme, colour style, navigation bar style, accent colour and grid columns." [ref=f1e243]'
+        - 'button "Open screenshot: The private album, unlocked, in light mode." [ref=f1e244]':
+          - img "The unlocked private album in light mode." [ref=f1e245]
+      - generic [ref=f1e246]:
+        - button "Scroll screenshots left" [ref=f1e247] [cursor=pointer]
+        - button "Scroll screenshots right" [ref=f1e250] [cursor=pointer]
+    - generic [ref=f1e253]:
+      - heading "Install One Gallery" [level=2] [ref=f1e254]
+      - tablist "Your system" [ref=f1e255]:
+        - tab "Arch / Manjaro" [ref=f1e257] [cursor=pointer]
+        - tab "Windows" [ref=f1e258] [cursor=pointer]
+        - tab "macOS" [active] [selected] [ref=f1e259] [cursor=pointer]
+      - tabpanel "macOS" [ref=f1e341]:
+        - list [ref=f1e342]:
+          - listitem [ref=f1e343]:
+            - heading "Download the disk image" [level=3] [ref=f1e344]
+            - link "Download for Mac" [ref=f1e345] [cursor=pointer]:
+              - /url: https://github.com/lochansaroy02/onegallery/releases/download/v0.3.0/OneGallery-0.3.0-macos-arm64.dmg
+            - paragraph [ref=f1e348]:
+              - text: OneGallery-0.3.0-macos-arm64.dmg, 213 MB. For Apple Silicon Macs (M1 and later) on macOS 13 Ventura or newer. All files are on the
+              - link "Releases page" [ref=f1e349] [cursor=pointer]:
+                - /url: https://github.com/lochansaroy02/onegallery/releases
+              - text: .
+            - paragraph [ref=f1e350]:
+              - text: On an Intel Mac?
+              - link "Build it from source" [ref=f1e351] [cursor=pointer]:
+                - /url: https://github.com/lochansaroy02/onegallery#building-the-mac-app
+              - text: .
+          - listitem [ref=f1e352]:
+            - heading "Drag it to Applications" [level=3] [ref=f1e353]
+            - paragraph [ref=f1e354]: Open the .dmg and drag One Gallery onto the Applications folder.
+          - listitem [ref=f1e355]:
+            - heading "Open it" [level=3] [ref=f1e356]
+            - paragraph [ref=f1e357]: Eject the disk image, then open One Gallery from Applications or Launchpad.
+          - listitem [ref=f1e358]:
+            - heading "Allow it the first time" [level=3] [ref=f1e359]
+            - paragraph [ref=f1e360]: "The app isn't signed with an Apple Developer ID yet, so macOS says it can't check it for malware. Click Done (not Move to Trash), then:"
+            - paragraph [ref=f1e361]:
+              - strong [ref=f1e362]: "macOS 15 Sequoia and newer:"
+              - text: System Settings › Privacy & Security, scroll to "One Gallery" was blocked, click Open Anyway and confirm with your password.
+            - paragraph [ref=f1e363]:
+              - strong [ref=f1e364]: "macOS 13 and 14:"
+              - text: in Finder, right-click (Control-click) One Gallery in Applications, choose Open, then Open.
+            - paragraph [ref=f1e365]:
+              - strong [ref=f1e366]: "Or in Terminal:"
+            - generic [ref=f1e367]:
+              - code [ref=f1e369]: xattr -dr com.apple.quarantine "/Applications/One Gallery.app"
+              - button "Copy command" [ref=f1e370] [cursor=pointer]:
+                - generic [ref=f1e373]: Copy
+          - listitem [ref=f1e374]:
+            - 'heading "Optional: video thumbnails" [level=3] [ref=f1e375]'
+            - paragraph [ref=f1e376]: Install ffmpeg with Homebrew and One Gallery finds it by itself. Videos play without it.
+            - generic [ref=f1e377]:
+              - code [ref=f1e379]: brew install ffmpeg
+              - button "Copy command" [ref=f1e380] [cursor=pointer]:
+                - generic [ref=f1e383]: Copy
+        - generic [ref=f1e384]:
+          - paragraph [ref=f1e385]:
+            - strong [ref=f1e386]: Good to know
+          - list [ref=f1e387]:
+            - listitem [ref=f1e388]: "To open pictures from Finder in One Gallery: Settings › Default image viewer › Set as default."
+            - listitem [ref=f1e389]:
+              - text: Uninstall by dragging the app to the Trash. Settings and the index stay in
+              - code [ref=f1e390]: ~/Library/Application Support/One Gallery
+              - text: and
+              - code [ref=f1e391]: ~/Library/Caches/One Gallery
+              - text: ; delete those folders to remove everything.
+    - generic [ref=f1e298]:
+      - heading "Questions" [level=2] [ref=f1e299]
+      - group [ref=f1e300]:
+        - generic "Does it move or change my files?" [ref=f1e301] [cursor=pointer]
+      - group [ref=f1e302]:
+        - generic "Where does it keep its data?" [ref=f1e303] [cursor=pointer]
+      - group [ref=f1e304]:
+        - generic "Is anything uploaded?" [ref=f1e305] [cursor=pointer]
+      - group [ref=f1e306]:
+        - generic "I used LGallery. What happens to my library?" [ref=f1e307] [cursor=pointer]
+      - group [ref=f1e308]:
+        - generic "Is it free?" [ref=f1e309] [cursor=pointer]
+  - contentinfo [ref=f1e310]:
+    - generic [ref=f1e312]:
+      - strong [ref=f1e313]: One Gallery
+      - generic [ref=f1e314]: Built with Python, Qt Quick (PySide6) and SQLite.
+    - navigation "Project links" [ref=f1e315]:
+      - link "Source code" [ref=f1e316] [cursor=pointer]:
+        - /url: https://github.com/lochansaroy02/onegallery
+      - link "Releases" [ref=f1e317] [cursor=pointer]:
+        - /url: https://github.com/lochansaroy02/onegallery/releases
+      - link "Report a problem" [ref=f1e318] [cursor=pointer]:
+        - /url: https://github.com/lochansaroy02/onegallery/issues
+      - link "MIT licence" [ref=f1e319] [cursor=pointer]:
+        - /url: https://github.com/lochansaroy02/onegallery/blob/main/LICENSE
+    - paragraph [ref=f1e320]: © 2026 lochansaroy02. Screenshots show the real app with generated sample pictures.
+  - navigation "Sections" [ref=f1e321]:
+    - link "Overview" [ref=f1e323] [cursor=pointer]:
+      - /url: "#top"
+    - link "Features" [ref=f1e327] [cursor=pointer]:
+      - /url: "#timeline"
+    - link "Private" [ref=f1e331] [cursor=pointer]:
+      - /url: "#private"
+    - link "Install" [ref=f1e335] [cursor=pointer]:
+      - /url: "#install"
