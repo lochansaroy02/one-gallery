@@ -46,9 +46,9 @@ export function Install() {
     <section className="install" id="install" data-nav="install">
       <h2>Install One Gallery</h2>
       <Segmented wide label="Your system" value={tab} onChange={setTab} options={[
-        { key: "linux", id: "tab-linux", controls: "panel-linux", label: <><Icon name="plasma" />Arch / Manjaro</> },
+        { key: "linux", id: "tab-linux", controls: "panel-linux", label: <><Icon name="linux" />Arch / Manjaro</> },
         { key: "windows", id: "tab-windows", controls: "panel-windows", label: <><Icon name="windows" />Windows</> },
-        { key: "mac", id: "tab-mac", controls: "panel-mac", label: <><Icon name="mac" />macOS</> },
+        { key: "mac", id: "tab-mac", controls: "panel-mac", label: <><Icon name="apple" />macOS</> },
       ]} />
 
       <Panel id="linux" tab={tab}>

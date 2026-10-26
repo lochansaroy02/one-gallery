@@ -17,13 +17,13 @@ export function Hero() {
         runs on Windows and macOS too.</p>
       <div className="hero-ctas intro">
         <InstallLink tab="linux" className="btn">
-          <Icon name="plasma" />Install on Linux
+          <Icon name="linux" />Install on Linux
         </InstallLink>
         <a className="btn btn-quiet" href="https://github.com/lochansaroy02/onegallery/releases/latest">
           <Icon name="windows" />Download for Windows
         </a>
         <InstallLink tab="mac" className="btn btn-quiet">
-          <Icon name="mac" />Download for Mac
+          <Icon name="apple" />Download for Mac
         </InstallLink>
       </div>
       <p className="hero-meta intro">Free and open source under the MIT licence. Version 0.3.0.</p>
