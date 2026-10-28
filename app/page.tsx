@@ -2,7 +2,7 @@ import { Collections, Looks, Timeline, Viewer } from "@/components/Features";
 import { Faq } from "@/components/Faq";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { Install, InstallTabProvider } from "@/components/Install";
+import { Install } from "@/components/Install";
 import { Pill } from "@/components/Pill";
 import { Screens } from "@/components/Screens";
 import { ScrollEffects } from "@/components/ScrollEffects";
@@ -24,7 +24,7 @@ const jsonLd = {
 
 export default function Page() {
   return (
-    <InstallTabProvider>
+    <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <a className="skip" href="#main">Skip to content</a>
       <Header />
@@ -43,6 +43,6 @@ export default function Page() {
       <Footer />
       <Pill />
       <ScrollEffects />
-    </InstallTabProvider>
+    </>
   );
 }

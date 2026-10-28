@@ -21,8 +21,8 @@ function copyText(text: string): Promise<void> {
   });
 }
 
-// a dark command box with a Copy button
-export function CodeBlock({ code, label = "Copy command" }: { code: string; label?: string }) {
+// a dark command box with a Copy button; oneLine keeps a long command on one line and scrolls it sideways
+export function CodeBlock({ code, label = "Copy command", oneLine }: { code: string; label?: string; oneLine?: boolean }) {
   const [state, setState] = useState<"idle" | "done" | "failed">("idle");
   const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
   useEffect(() => () => clearTimeout(timer.current), []);
@@ -37,7 +37,7 @@ export function CodeBlock({ code, label = "Copy command" }: { code: string; labe
 
   const done = state === "done";
   return (
-    <div className="code">
+    <div className={oneLine ? "code code-line" : "code"}>
       <pre><code>{code}</code></pre>
       <button className={done ? "copy done" : "copy"} type="button" aria-label={label} onClick={copy}>
         <AnimatePresence mode="popLayout" initial={false}>

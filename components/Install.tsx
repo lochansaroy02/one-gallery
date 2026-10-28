@@ -1,31 +1,13 @@
 "use client";
 
-import { createContext, useContext, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { motion } from "motion/react";
 import { CodeBlock } from "./CodeBlock";
 import { Icon } from "./Icon";
+import { INSTALL_COMMAND } from "./QuickInstall";
 import { Segmented } from "./Segmented";
 
 type Tab = "linux" | "windows" | "mac";
-
-const InstallTab = createContext<{ tab: Tab; setTab: (tab: Tab) => void } | null>(null);
-
-export function InstallTabProvider({ children }: { children: ReactNode }) {
-  const [tab, setTab] = useState<Tab>("linux");
-  return <InstallTab.Provider value={{ tab, setTab }}>{children}</InstallTab.Provider>;
-}
-
-function useInstallTab() {
-  const ctx = useContext(InstallTab);
-  if (!ctx) throw new Error("useInstallTab needs an InstallTabProvider");
-  return ctx;
-}
-
-// "Install on Linux" / "Download for Mac" in the hero open their tab
-export function InstallLink({ tab, className, children }: { tab: Tab; className?: string; children: ReactNode }) {
-  const { setTab } = useInstallTab();
-  return <a className={className} href="#install" onClick={() => setTab(tab)}>{children}</a>;
-}
 
 // all panels stay in the page; the chosen one rises in
 function Panel({ id, tab, children }: { id: Tab; tab: Tab; children: ReactNode }) {
@@ -40,13 +22,35 @@ function Panel({ id, tab, children }: { id: Tab; tab: Tab; children: ReactNode }
 }
 
 export function Install() {
-  const { tab, setTab } = useInstallTab();
+  const [tab, setTab] = useState<Tab>("linux");
 
   return (
     <section className="install" id="install" data-nav="install">
       <h2>Install One Gallery</h2>
+      <div className="install-quick">
+        <div>
+          <p className="install-lede">One command installs One Gallery on Linux, macOS and Windows. Run it again to
+            update; your settings, library and favorites are never touched.</p>
+          <CodeBlock oneLine code={INSTALL_COMMAND} label="Copy install command" />
+          <p className="hint">On Windows, run it in Git Bash. PowerShell and cmd can&apos;t run it.</p>
+        </div>
+        <div className="aside">
+          <p><strong>Options</strong> go after <code>bash -s --</code>, for example:</p>
+          <CodeBlock oneLine code={INSTALL_COMMAND.replace("| bash", "| bash -s -- --restart")} />
+          <dl className="options">
+            <dt><code>--version v0.3.0</code></dt>
+            <dd>macOS and Windows: install that release instead of the latest.</dd>
+            <dt><code>--dir PATH</code></dt>
+            <dd>Linux: where to keep the source checkout.</dd>
+            <dt><code>--restart</code></dt>
+            <dd>Linux and macOS: reopen One Gallery afterwards if it was running.</dd>
+          </dl>
+        </div>
+      </div>
+
+      <h3 className="install-manual">Or install by hand</h3>
       <Segmented wide label="Your system" value={tab} onChange={setTab} options={[
-        { key: "linux", id: "tab-linux", controls: "panel-linux", label: <><Icon name="linux" />Arch / Manjaro</> },
+        { key: "linux", id: "tab-linux", controls: "panel-linux", label: <><Icon name="linux" />Linux</> },
         { key: "windows", id: "tab-windows", controls: "panel-windows", label: <><Icon name="windows" />Windows</> },
         { key: "mac", id: "tab-mac", controls: "panel-mac", label: <><Icon name="apple" />macOS</> },
       ]} />
@@ -60,8 +64,8 @@ export function Install() {
           </li>
           <li>
             <h3>Install it as an app</h3>
-            <p>Installs the system packages with pacman, sets up the app and adds it to the launcher. No root needed
-              for the app itself.</p>
+            <p>On Arch and Manjaro it installs the system packages with pacman; elsewhere it sets up a Python
+              environment. Then it adds One Gallery to the launcher. No root needed for the app itself.</p>
             <CodeBlock code="./update.sh --install" />
           </li>
           <li>
@@ -73,7 +77,7 @@ export function Install() {
         <div className="aside">
           <p><strong>Updating:</strong> run <code>./update.sh</code> in the same folder. Your library, favorites and
             settings are never touched.</p>
-          <p><strong>Optional extras</strong> for HEIC photos, People, live updates and the KDE share menu:</p>
+          <p><strong>Optional extras</strong> on Arch and Manjaro, for HEIC photos, People, live updates and the KDE share menu:</p>
           <CodeBlock code="sudo pacman -S python-pillow-heif python-opencv python-watchdog purpose" />
         </div>
       </Panel>

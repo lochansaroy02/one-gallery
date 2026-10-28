@@ -194,7 +194,22 @@ h3 { font-size: 19px; letter-spacing: -0.01em; font-weight: 650; }
   letter-spacing: -0.01em;
   text-wrap: balance;
 }
-.hero-ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+/* the one-line installer, with a card per system under it */
+.hero-install {
+  max-width: 860px; margin: 0 auto;
+  display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 18px;
+}
+.quick-install { width: 100%; text-align: left; }
+.quick-install .code { margin-top: 0; }
+.platforms {
+  list-style: none; margin: 12px 0 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;
+}
+.platforms li { background: var(--surface); border-radius: var(--r-m); padding: 16px 18px; box-shadow: inset 0 0 0 1px var(--hair); }
+.platforms h3 { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 16px; }
+.platforms h3 .ic { width: 17px; height: 17px; }
+.platforms p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.5; }
+.quick-more { margin: 14px 0 0; color: var(--muted); font-size: 14px; text-align: center; }
 .hero-meta { margin: 18px 0 0; color: var(--muted); font-size: 14px; }
 .hero-stage {
   max-width: var(--max);
@@ -455,6 +470,15 @@ h3 { font-size: 19px; letter-spacing: -0.01em; font-weight: 650; }
 }
 .code pre { margin: 0; padding: 18px 110px 18px 20px; white-space: pre-wrap; overflow-wrap: anywhere; }
 .code code { background: none; padding: 0; font-size: 14.5px; line-height: 1.7; color: inherit; }
+/* one-line commands scroll sideways next to the Copy button, fading out at the edge */
+.code-line { display: flex; align-items: center; gap: 4px; padding-right: 10px; }
+.code-line pre {
+  flex: 1; min-width: 0; padding-right: 20px;
+  white-space: pre; overflow-wrap: normal; overflow-x: auto;
+  scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+  mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+}
+.code-line .copy { position: static; flex: none; }
 .copy {
   position: absolute; top: 10px; right: 10px;
   display: inline-flex; align-items: center; gap: 6px;
@@ -472,6 +496,12 @@ h3 { font-size: 19px; letter-spacing: -0.01em; font-weight: 650; }
 .aside p { color: var(--muted); font-size: 15.5px; }
 .aside p strong { color: var(--text); }
 .win-download p { color: var(--muted); margin-top: 16px; }
+.install-quick { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(32px, 5vw, 72px); margin-bottom: clamp(56px, 8vh, 88px); }
+.install-lede { font-size: clamp(18px, 1.8vw, 20px); line-height: 1.45; }
+.options { margin: 16px 0 0; display: grid; gap: 4px; font-size: 15px; }
+.options dt { margin-top: 8px; }
+.options dd { margin: 0; color: var(--muted); }
+.install-manual { margin-bottom: 18px; font-size: 22px; }
 #panel-windows .ticks { margin: 0; align-self: center; }
 .steps p strong { color: var(--text); }
 #panel-mac .ticks { margin: 0; color: var(--muted); font-size: 15.5px; }
@@ -563,7 +593,7 @@ h3 { font-size: 19px; letter-spacing: -0.01em; font-weight: 650; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 900px) {
-  .feature, .private-inner, .panel { grid-template-columns: minmax(0, 1fr); }
+  .feature, .private-inner, .panel, .install-quick, .platforms { grid-template-columns: minmax(0, 1fr); }
   .feature-flip .feature-text { order: 0; }
   .feature-text { max-width: none; }
   .more-list { grid-template-columns: minmax(0, 1fr); }
@@ -572,7 +602,6 @@ h3 { font-size: 19px; letter-spacing: -0.01em; font-weight: 650; }
 @media (max-width: 560px) {
   body { font-size: 16px; }
   .bar .btn-small { display: none; }
-  .hero-ctas .btn { width: 100%; justify-content: center; }
   .pill a { width: 72px; height: 52px; font-size: 11px; }
   .window-bar { height: 24px; font-size: 11px; }
   .lights { left: 9px; gap: 5px; }
@@ -582,6 +611,7 @@ h3 { font-size: 19px; letter-spacing: -0.01em; font-weight: 650; }
   .lb-prev, .lb-next { position: absolute; bottom: 24px; }
   .lb-prev { left: calc(50% - 56px); } .lb-next { right: calc(50% - 56px); }
   .code pre { padding-right: 20px; padding-top: 54px; }
+  .code-line pre { padding-top: 18px; }
   .segmented-wide button { height: 42px; padding: 0 10px; gap: 6px; font-size: 14px; }
   .segmented-wide .ic { width: 18px; height: 18px; }
 }

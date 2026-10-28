@@ -25,7 +25,7 @@ export function ScrollEffects() {
         .fromTo(".big-title", { autoAlpha: 0, filter: "blur(8px)", letterSpacing: "-0.02em" },
           { autoAlpha: 1, filter: "blur(0px)", letterSpacing: "-0.045em", duration: 1.2, clearProps: "filter,letterSpacing" })
         .fromTo(".hero-count", { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0 }, 0.08)
-        .fromTo([".hero-lede", ".hero-ctas", ".hero-meta"], { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, stagger: 0.08 }, 0.14)
+        .fromTo([".hero-lede", ".hero-install", ".hero-meta"], { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, stagger: 0.08 }, 0.14)
         .fromTo(".hero-window", { autoAlpha: 0, y: 60, scale: 0.94 }, { autoAlpha: 1, y: 0, scale: 1, duration: 1.3 }, 0.36);
 
       // the hero window starts tipped back and lies flat as you scroll
