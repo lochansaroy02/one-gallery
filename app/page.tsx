@@ -33,10 +33,11 @@ export default function Page() {
         <Timeline />
         <Looks />
         <Viewer />
-        <Private />
         <Collections />
         <More />
         <Screens />
+        {/* after every feature section, so the pill only moves forward: Overview, Features, Private, Install */}
+        <Private />
         <Install />
         <Faq />
       </main>

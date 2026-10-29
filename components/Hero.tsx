@@ -1,5 +1,5 @@
 import { Icon } from "./Icon";
-import { QuickInstall } from "./QuickInstall";
+import { InstallBox } from "./InstallBox";
 import { Window } from "./Window";
 import { shotSrc, shotSrcSet } from "@/lib/shots";
 
@@ -16,7 +16,7 @@ export function Hero() {
       <p className="hero-lede intro">The folders you choose, newest first and grouped by day. Made for Linux, and it
         runs on Windows and macOS too.</p>
       <div className="hero-install intro">
-        <QuickInstall />
+        <InstallBox idPrefix="hero" />
         <a className="btn btn-quiet btn-small" href="https://github.com/lochansaroy02/onegallery/releases">
           <Icon name="download" />Download from GitHub Releases
         </a>

@@ -1,16 +1,15 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { motion } from "motion/react";
 import { CodeBlock } from "./CodeBlock";
 import { Icon } from "./Icon";
-import { INSTALL_COMMAND } from "./QuickInstall";
+import { InstallBox, UNIX_COMMAND } from "./InstallBox";
 import { Segmented } from "./Segmented";
-
-type Tab = "linux" | "windows" | "mac";
+import { useInstallOs, type Os } from "@/lib/installOs";
 
 // all panels stay in the page; the chosen one rises in
-function Panel({ id, tab, children }: { id: Tab; tab: Tab; children: ReactNode }) {
+function Panel({ id, tab, children }: { id: Os; tab: Os; children: ReactNode }) {
   const on = id === tab;
   return (
     <motion.div className="panel" role="tabpanel" id={`panel-${id}`} aria-labelledby={`tab-${id}`} hidden={!on}
@@ -22,31 +21,44 @@ function Panel({ id, tab, children }: { id: Tab; tab: Tab; children: ReactNode }
 }
 
 export function Install() {
-  const [tab, setTab] = useState<Tab>("linux");
+  const [tab, setTab] = useInstallOs();  // the same system as the install box
 
   return (
     <section className="install" id="install" data-nav="install">
       <h2>Install One Gallery</h2>
-      <div className="install-quick">
-        <div>
-          <p className="install-lede">One command installs One Gallery on Linux, macOS and Windows. Run it again to
-            update; your settings, library and favorites are never touched.</p>
-          <CodeBlock oneLine code={INSTALL_COMMAND} label="Copy install command" />
-          <p className="hint">On Windows, run it in Git Bash. PowerShell and cmd can&apos;t run it.</p>
+      <p className="install-lede">One command installs One Gallery, or updates it if it&apos;s already installed. Your
+        settings, library and favorites are never touched.</p>
+      <InstallBox idPrefix="install" />
+      <details className="advanced">
+        <summary>Advanced: installer options</summary>
+        <div className="advanced-body">
+          <div>
+            <h4>Linux and macOS</h4>
+            <p>Options go after <code>bash -s --</code>, for example:</p>
+            <CodeBlock oneLine code={`${UNIX_COMMAND} -s -- --restart`} />
+            <dl className="options">
+              <dt><code>--version v0.3.0</code></dt>
+              <dd>macOS: install a specific release.</dd>
+              <dt><code>--dir PATH</code></dt>
+              <dd>Linux: where to keep the source checkout.</dd>
+              <dt><code>--restart</code></dt>
+              <dd>Reopen One Gallery if it was running.</dd>
+            </dl>
+          </div>
+          <div>
+            <h4>Windows</h4>
+            <p>Run the installer as a script block, for example:</p>
+            <CodeBlock oneLine
+              code="& ([scriptblock]::Create((irm https://raw.githubusercontent.com/lochansaroy02/onegallery/main/install.ps1))) -Version v0.3.0" />
+            <dl className="options">
+              <dt><code>-Version v0.3.0</code></dt>
+              <dd>Install a specific release.</dd>
+              <dt><code>-Restart</code></dt>
+              <dd>Reopen One Gallery if it was running.</dd>
+            </dl>
+          </div>
         </div>
-        <div className="aside">
-          <p><strong>Options</strong> go after <code>bash -s --</code>, for example:</p>
-          <CodeBlock oneLine code={INSTALL_COMMAND.replace("| bash", "| bash -s -- --restart")} />
-          <dl className="options">
-            <dt><code>--version v0.3.0</code></dt>
-            <dd>macOS and Windows: install that release instead of the latest.</dd>
-            <dt><code>--dir PATH</code></dt>
-            <dd>Linux: where to keep the source checkout.</dd>
-            <dt><code>--restart</code></dt>
-            <dd>Linux and macOS: reopen One Gallery afterwards if it was running.</dd>
-          </dl>
-        </div>
-      </div>
+      </details>
 
       <h3 className="install-manual">Or install by hand</h3>
       <Segmented wide label="Your system" value={tab} onChange={setTab} options={[

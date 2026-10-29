@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import type { ReactNode } from "react";
 import { IconSprite } from "@/components/Icon";
 import { Providers } from "@/components/Providers";
+import { detectOsScript } from "@/lib/detectOs";
 import "./globals.css";
 
 const onest = localFont({
@@ -32,8 +33,10 @@ export const viewport: Viewport = {
   ],
 };
 
-// set the theme before the first paint (no flash), and mark that scripts run
+// before the first paint (no flash): mark that scripts run, pick the install tab for this system,
+// and set the theme
 const themeScript = `document.documentElement.classList.add("js");
+${detectOsScript}
 try {
   var t = localStorage.getItem("og-theme");
   if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
